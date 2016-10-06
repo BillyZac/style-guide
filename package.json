@@ -1,8 +1,12 @@
 {
-  "name": "demo-css-package",
+  "name": "style-guide",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BillyZac/style-guide.git"
+  },
   "scripts": {
     "build": "webpack",
     "start": "httpster"
@@ -16,8 +20,8 @@
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "style-loader": "^0.13.1",
-    "whippersnapper": "0.0.1",
-    "zzzss": "0.0.1"
+    "whippersnapper": "<1.0.0",
+    "zzzss": "<1.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.17.0",

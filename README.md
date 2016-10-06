@@ -1,5 +1,7 @@
 # Style guide
 
+This Style Guide demonstrates the styles in [zzzss](https://www.npmjs.com/package/zzzss) and uses the React components in [Whippersnapper](https://www.npmjs.com/package/whippersnapper).
+
 ## Usage
 Install dependencies:
 ```
