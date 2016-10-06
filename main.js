@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-const Hey = require('whippersnapper/lib/react/Hey.js')
+const Hey = require('whippersnapper/build/Hey.js')
+const Text = require('whippersnapper/build/Text.js')
 require('zzzss/dist/css/zzzss.css')
 
 class Thing extends React.Component {
@@ -8,11 +9,12 @@ class Thing extends React.Component {
     return (
       <div>
         <h1>Style guide</h1>
-        <p>This is a Hey component.</p>
-        <p>To make one for yourself import the component and style, like so:</p>
-        <pre>const Hey = require('whippersnapper/lib/react/Hey.js')</pre>
-        <pre>require('zzzss/dist/css/zzzss.css')</pre>
+        <h2>This is a Hey component.</h2>
         <Hey />
+        <Text
+          label="Planet"
+          content="Jupiter"
+        />
       </div>
     )
   }
