@@ -1,13 +1,14 @@
-@import url('https://fonts.googleapis.com/css?family=Oswald:300,400');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
 
 body {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   margin: 20px 100px 0px 200px;
 }
 
 h2 {
   border-bottom: 2px solid #EEE;
+  text-transform: uppercase;
 }
 
 .intro {
