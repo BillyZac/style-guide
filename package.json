@@ -9,7 +9,7 @@
   },
   "scripts": {
     "build": "webpack --watch",
-    "start": "httpster"
+    "start": "cd build && httpster"
   },
   "author": "",
   "license": "ISC",
