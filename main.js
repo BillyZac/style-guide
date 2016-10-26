@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 const Hey = require('whippersnapper/build/Hey.js')
 const Text = require('whippersnapper/build/Text.js')
+const Footer = require('whippersnapper/build/Footer.js')
 require('zzzss/dist/css/zzzss.css')
 require('./style.css')
 
@@ -54,6 +55,9 @@ class Thing extends React.Component {
           content="Jupiter"
         />
         <Code codeSnippet='<Text label="Planet" content="Jupiter" />' />
+        <Footer
+          appVersion="1.0"
+        />
       </div>
     )
   }

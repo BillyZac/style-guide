@@ -8,7 +8,7 @@
     "url": "https://github.com/BillyZac/style-guide.git"
   },
   "scripts": {
-    "build": "webpack --watch",
+    "build": "webpack",
     "start": "httpster"
   },
   "author": "",
