@@ -2,10 +2,10 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 const Hey = require('whippersnapper/build/Hey.js')
 const Text = require('whippersnapper/build/Text.js')
+import Header from 'whippersnapper/build/Header';
 const Footer = require('whippersnapper/build/Footer.js')
 require('zzzss/dist/css/zzzss.css')
 require('./style.css')
-
 
 const Code = React.createClass({
   getInitialState: function() {
@@ -32,17 +32,14 @@ const Code = React.createClass({
   }
 })
 
-const Logo = ({logotype}) => (
-  <div className="logo">
-    {logotype}
-  </div>
-)
-
 class Thing extends React.Component {
   render() {
     return (
       <div>
-        <Logo logotype="Living Style Guide" />
+        <Header
+          logotype="Living Style Guide"
+          onLogoClick={() => console.log('click!')}
+        />
         <div className="intro">
           <p>Demonstrating the Whippersnapper React component library with the zzzss style library.</p>
         </div>
