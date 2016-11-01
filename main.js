@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-const Hey = require('whippersnapper/build/Hey.js')
 const Text = require('whippersnapper/build/Text.js')
 import Header from 'whippersnapper/build/Header';
 const Footer = require('whippersnapper/build/Footer.js')
@@ -43,9 +42,6 @@ class Thing extends React.Component {
         <div className="intro">
           <p>Demonstrating the Whippersnapper React component library with the zzzss style library.</p>
         </div>
-        <h2>Hey component</h2>
-        <Hey />
-        <Code codeSnippet="<Hey />" />
         <h2>Text component</h2>
         <Text
           label="Planet"
