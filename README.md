@@ -13,14 +13,16 @@ Install dependencies:
 npm install
 ```
 
-Build:
+Start the dev server:
+```
+npm start
+```
+This runs Webpack Dev Server and serves the app at http://localhost:3333/. Makes changes in the code and see the app automatically reload. Magical!
+
+
+## To build for deployment
 ```
 npm run build
 ```
 
-And start the dev server:
-```
-npm start
-```
-
-Visit the guide at http://localhost:3333/
+And deploy 'build' however you like. [I have a deployed version on Firebase.](https://living-style-guide.firebaseapp.com/)

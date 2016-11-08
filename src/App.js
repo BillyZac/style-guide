@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+
 const Text = require('whippersnapper/build/Text.js')
 import Header from 'whippersnapper/build/Header';
 const Footer = require('whippersnapper/build/Footer.js')
@@ -31,13 +31,13 @@ const Code = React.createClass({
   }
 })
 
-class Thing extends React.Component {
+class App extends React.Component {
   render() {
     return (
       <div>
         <Header
           logotype="Living Style Guide"
-          onLogoClick={() => console.log('click!')}
+          onLogoClick={() => console.log('clik!')}
         />
         <div className="intro">
           <p>Demonstrating the Whippersnapper React component library with the zzzss style library.</p>
@@ -56,4 +56,4 @@ class Thing extends React.Component {
   }
 }
 
-ReactDOM.render(<Thing />, document.getElementById('app'))
+export default App
