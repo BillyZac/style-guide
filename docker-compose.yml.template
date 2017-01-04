@@ -1,0 +1,5 @@
+nginx:
+  restart: always
+  image: ${registry_base}/style-guide:${tag}
+  ports:
+    - 80
