@@ -49,13 +49,7 @@ node {
       }
 
       stage("Test") {
-        try {
-          sh "npm run test"
-        }
-        finally {
-          junit 'reports/test-results.xml'
-          publishHTML(target: [reportDir: 'reports', reportFiles: 'test-results.html', reportName: 'Test Results'])
-        }
+        sh "npm run test"
       }
 
       stage("Analysis") {
