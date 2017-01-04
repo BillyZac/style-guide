@@ -29,7 +29,7 @@ node {
 
         // global for exception handling
         slackChannel = "tbd"
-        gitUrl = "https://github.com/buildit/style-guide"
+        gitUrl = "https://github.com/BillyZac/style-guide"
         appUrl = "http://style-guide.staging.${domainName}"
       }
 
@@ -50,7 +50,7 @@ node {
 
       stage("Test") {
         try {
-          sh "npm run test:ci"
+          sh "npm run test"
         }
         finally {
           junit 'reports/test-results.xml'
@@ -63,7 +63,7 @@ node {
       }
 
       stage("Build") {
-        sh "NODE_ENV='staging' EOLAS_DOMAIN='${domainName}' npm run build"
+        sh "NODE_ENV='staging' DOMAIN='${domainName}' npm run build"
       }
 
       stage("Docker Image Build") {
