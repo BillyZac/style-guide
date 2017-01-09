@@ -1,13 +1,33 @@
 import React from 'react'
 import Component from './components/Component.js'
-import Header from 'whippersnapper/build/Header';
+import CommitList from './components/CommitList.js'
+import Header from 'whippersnapper/build/Header'
 const Footer = require('whippersnapper/build/Footer.js')
 require('zzzss/dist/css/zzzss.css')
 require('../style.css')
+import fetch from 'isomorphic-fetch'
 
 import components from './data/components.js'
 
 class App extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {commitList: []}
+  }
+
+  componentDidMount() {
+    fetch('./temp.json')
+      .then(response => {
+        console.log(response);
+        return response.json()
+      })
+      .then(commitList => {
+        this.setState({
+          commitList: commitList
+        })
+      })
+  }
+
   render() {
     return (
       <div>
@@ -26,7 +46,7 @@ class App extends React.Component {
             codeSnippet={component.codeSnippet}
           />
         ))}
-
+        <CommitList list={ this.state.commitList }/>
         <Footer appVersion="1.0" />
       </div>
     )

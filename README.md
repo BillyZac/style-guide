@@ -22,7 +22,7 @@ This runs Webpack Dev Server and serves the app at http://localhost:3333/. Make 
 npm run build
 ```
 
-And deploy 'build' however you like. [I have a deployed version on Firebase.](https://living-style-guide.firebaseapp.com/)
+And deploy 'build' however you like.
 
 ## Continuous deployment
 The Jenkins pipeline is set up to deploy to a site accessible on Buildit's VPN. If you're on the VPN, check it out [here](http://style-guide.riglet/).

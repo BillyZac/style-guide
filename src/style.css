@@ -42,3 +42,49 @@ h2 {
 .hidden {
   opacity: 0;
 }
+
+.commit {
+  margin-bottom: 1rem;
+  display: flex;
+  border: 3px solid #EEE;
+  padding: 0.5rem;
+  align-items: center;
+  border-radius: 0.5rem;
+}
+
+.commit > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  /*outline: 1px solid pink;*/
+  height: 50px;
+}
+
+.commit .avatar {
+  margin-right: 1rem;
+}
+.commit .avatar img {
+  border-radius: 50%;
+}
+.message {
+  margin-left: 1rem;
+}
+
+.commit-list {
+  margin-bottom: 4rem;
+}
+
+.committer {
+  padding-right: 1rem;
+  border-right: 3px solid #EEE;
+}
+
+.message a {
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+  color: #e98d03;
+}
+.message a:hover {
+  border-bottom: 3px solid #ffa500;
+  color: #ffa500;
+}
