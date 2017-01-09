@@ -7,6 +7,8 @@ require('zzzss/dist/css/zzzss.css')
 require('../style.css')
 import fetch from 'isomorphic-fetch'
 
+const GIT_COMMIT_URL = 'https://api.github.com/repos/buildit/zzzss/commits'
+
 import components from './data/components.js'
 
 class App extends React.Component {
@@ -16,7 +18,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch('./temp.json')
+    fetch(GIT_COMMIT_URL)
       .then(response => {
         console.log(response);
         return response.json()

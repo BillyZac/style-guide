@@ -21,7 +21,7 @@ const CommitList = ({list = []}) => {
   if (list.length > 0) {
     return (
       <div className="commit-list">
-        <h2>Latest changes:</h2>
+        <h2>Latest changes</h2>
         {list.slice(0, 5).map(item => (
           <Commit
             image_url={item.author.avatar_url}
