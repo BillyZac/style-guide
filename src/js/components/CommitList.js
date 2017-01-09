@@ -34,7 +34,7 @@ const CommitList = ({list = []}) => {
       </div>
     )
   }
-  return <div>Nothing</div>
+  return <div></div>
 }
 
 export default CommitList
