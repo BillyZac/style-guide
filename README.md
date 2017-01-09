@@ -4,9 +4,6 @@
 
 This Style Guide demonstrates the styles in [zzzss](https://www.npmjs.com/package/zzzss) and uses the React components in [Whippersnapper](https://www.npmjs.com/package/whippersnapper).
 
-## Deployed Living Style Guide
-[Is right here](https://living-style-guide.firebaseapp.com/).
-
 ## To run the style guide locally
 Install dependencies:
 ```
@@ -17,7 +14,7 @@ Start the dev server:
 ```
 npm start
 ```
-This runs Webpack Dev Server and serves the app at http://localhost:3333/. Makes changes in the code and see the app automatically reload. Magical!
+This runs Webpack Dev Server and serves the app at http://localhost:3333/. Make changes in the code and see the app automatically reload. Magical!
 
 
 ## To build for deployment
@@ -26,3 +23,8 @@ npm run build
 ```
 
 And deploy 'build' however you like. [I have a deployed version on Firebase.](https://living-style-guide.firebaseapp.com/)
+
+## Continuous deployment
+The Jenkins pipeline is set up to deploy to a site accessible on Buildit's VPN. If you're on the VPN, check it out [here](http://style-guide.riglet/).
+
+The Jenkins job can be monitored [here](http://jenkins.riglet:9000/jenkins/job/style-guide-staging-pipeline/).
