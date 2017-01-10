@@ -11,6 +11,20 @@ const GIT_COMMIT_URL = 'https://api.github.com/repos/buildit/zzzss/commits'
 
 import components from './data/components.js'
 
+const main = components.map((component, i) => (
+  <Component
+    key={`component-${i}`}
+    title={component.title}
+    component={component.component}
+    codeSnippet={component.codeSnippet}
+  />
+))
+
+const description =
+  (<div className="intro">
+    <p>Demonstrating the Whippersnapper React component library with the zzzss style library.</p>
+  </div>)
+
 class App extends React.Component {
   constructor(props) {
     super(props)
@@ -31,20 +45,6 @@ class App extends React.Component {
   }
 
   render() {
-    const main = components.map((component, i) => (
-      <Component
-        key={`component-${i}`}
-        title={component.title}
-        component={component.component}
-        codeSnippet={component.codeSnippet}
-      />
-    ))
-
-    const description =
-      (<div className="intro">
-        <p>Demonstrating the Whippersnapper React component library with the zzzss style library.</p>
-      </div>)
-
     return (
       <div>
         <Header
