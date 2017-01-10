@@ -31,23 +31,28 @@ class App extends React.Component {
   }
 
   render() {
+    const main = components.map((component, i) => (
+      <Component
+        key={`component-${i}`}
+        title={component.title}
+        component={component.component}
+        codeSnippet={component.codeSnippet}
+      />
+    ))
+
+    const description =
+      (<div className="intro">
+        <p>Demonstrating the Whippersnapper React component library with the zzzss style library.</p>
+      </div>)
+
     return (
       <div>
         <Header
           logotype="Living Style Guide"
           onLogoClick={() => console.log('clik!')}
         />
-        <div className="intro">
-          <p>Demonstrating the Whippersnapper React component library with the zzzss style library.</p>
-        </div>
-        { components.map((component, i) => (
-          <Component
-            key={`component-${i}`}
-            title={component.title}
-            component={component.component}
-            codeSnippet={component.codeSnippet}
-          />
-        ))}
+        {description}
+        {main}
         <CommitList list={ this.state.commitList }/>
         <Footer appVersion="1.0" />
       </div>
