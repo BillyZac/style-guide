@@ -1,7 +1,7 @@
 body {
   margin: 20px 100px 0px 200px;
   h2 {
-    border-bottom: 2px solid $red;
+    border-bottom: 2px solid $light-gray;
     text-transform: uppercase;
   }
 }
@@ -12,7 +12,7 @@ body {
 }
 
 .intro p {
-  color: #888;
+  color: $gray;
   font-weight: 300;
 }
 
@@ -94,7 +94,7 @@ body {
     width: 200px;
     height: 200px;
     background: gray;
-    &.brand-pink { background: pink; }
+    &.brand-colour-red { background: $brand-colour-red; }
   }
   .color-name:before {
     content: "$"
