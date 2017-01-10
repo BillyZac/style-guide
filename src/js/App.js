@@ -3,9 +3,12 @@ import Component from './components/Component.js'
 import CommitList from './components/CommitList.js'
 import Header from 'whippersnapper/build/Header'
 const Footer = require('whippersnapper/build/Footer.js')
-require('zzzss/dist/css/zzzss.css')
-require('../style.css')
+// require('zzzss/dist/css/zzzss.css')
+// require('../style.css')
 import fetch from 'isomorphic-fetch'
+
+// import color from 'zzzss/scss/colors.scss'
+// console.log(colors)
 
 const GIT_COMMIT_URL = 'https://api.github.com/repos/buildit/zzzss/commits'
 

@@ -13,9 +13,9 @@
     "test": "echo 'Pretending to run tests.'",
     "lint": "echo 'Pretending to run linting.'"
   },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
+  "author": "Zachary Smith",
+  "license": "MIT",
+  "devDependencies": {
     "css-loader": "^0.25.0",
     "es6-promise": "^4.0.5",
     "isomorphic-fetch": "^2.2.1",
@@ -24,19 +24,20 @@
     "react-dom": "^15.3.2",
     "style-loader": "^0.13.1",
     "whippersnapper": "<1.0.0",
-    "zzzss": "<1.0.0"
-  },
-  "devDependencies": {
+    "zzzss": "<1.0.0",
     "babel-core": "^6.17.0",
     "babel-loader": "^6.2.5",
     "babel-preset-es2015": "^6.16.0",
     "babel-preset-react": "^6.16.0",
     "clean-webpack-plugin": "^0.1.14",
+    "extract-text-webpack-plugin": "^1.0.1",
     "html-loader": "^0.4.4",
     "html-webpack-plugin": "^2.24.1",
     "httpster": "^1.0.3",
     "json-loader": "^0.5.4",
+    "node-sass": "^4.2.0",
     "path": "^0.12.7",
+    "sass-loader": "^4.1.1",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.16.2"
   }
