@@ -7,9 +7,6 @@ const Footer = require('whippersnapper/build/Footer.js')
 // require('../style.css')
 import fetch from 'isomorphic-fetch'
 
-// import color from 'zzzss/scss/colors.scss'
-// console.log(colors)
-
 const GIT_COMMIT_URL = 'https://api.github.com/repos/buildit/zzzss/commits'
 
 import components from './data/components.js'
@@ -28,6 +25,13 @@ const description =
     <p>Demonstrating the Whippersnapper React component library with the zzzss style library.</p>
   </div>)
 
+const ColorSwatch = ({colorName, colorClass}) => (
+  <div className="color-swatch">
+    <div className={`swatch ${colorClass}`}></div>
+    <p className="color-name">{colorName}</p>
+  </div>
+)
+
 class App extends React.Component {
   constructor(props) {
     super(props)
@@ -36,10 +40,7 @@ class App extends React.Component {
 
   componentDidMount() {
     fetch(GIT_COMMIT_URL)
-      .then(response => {
-        console.log(response);
-        return response.json()
-      })
+      .then(response => response.json())
       .then(commitList => {
         this.setState({
           commitList: commitList
@@ -55,6 +56,7 @@ class App extends React.Component {
           onLogoClick={() => console.log('clik!')}
         />
         {description}
+        <ColorSwatch colorName="pink" colorClass="brand-pink" />
         {main}
         <CommitList list={ this.state.commitList }/>
         <Footer appVersion="1.0" />

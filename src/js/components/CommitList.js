@@ -17,7 +17,6 @@ const Commit = ({ image_url, name, date, message, commit_url}) => (
 )
 
 const CommitList = ({list = []}) => {
-  console.log("list:", list);
   if (list.length > 0) {
     return (
       <div className="commit-list">

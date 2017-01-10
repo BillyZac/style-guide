@@ -1,1 +1,3 @@
-@import "./style-guide.scss"
+@import './node_modules/zzzss/scss/zzzss.scss'; // Colors from our "brand"
+@import './node_modules/zzzss/scss/colors.scss'; // Colors from our "brand"
+@import "./style-guide.scss" // Styles specific to the Style Guide app

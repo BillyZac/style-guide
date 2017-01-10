@@ -1,7 +1,7 @@
 body {
   margin: 20px 100px 0px 200px;
   h2 {
-    border-bottom: 2px solid #EEE;
+    border-bottom: 2px solid $red;
     text-transform: uppercase;
   }
 }
@@ -87,4 +87,16 @@ body {
 .message a:hover {
   border-bottom: 3px solid #ffa500;
   color: #ffa500;
+}
+
+.color-swatch {
+  .swatch {
+    width: 200px;
+    height: 200px;
+    background: gray;
+    &.brand-pink { background: pink; }
+  }
+  .color-name:before {
+    content: "$"
+  }
 }
