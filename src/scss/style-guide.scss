@@ -110,3 +110,12 @@ body {
     content: "$"
   }
 }
+
+.colors {
+  .color-swatches {
+    display: flex;
+    > * {
+      margin-right: 10px;
+    }
+  }
+}
