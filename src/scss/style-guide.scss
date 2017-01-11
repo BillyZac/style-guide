@@ -90,11 +90,20 @@ body {
 }
 
 .color-swatch {
+  width: 150px;
   .swatch {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     background: gray;
     &.brand-colour-red { background: $brand-colour-red; }
+  }
+  .color-name {
+    margin: 5px 0 0 0;
+
+    color: #EEE;
+    background: #444;
+    font-family: monospace;
+    padding: 8px;
   }
   .color-name:before {
     content: "$"
