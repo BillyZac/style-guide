@@ -7,7 +7,7 @@ const Commit = ({ image_url, name, date, message, commit_url}) => (
       <img src={image_url} height="50" width="50"></img>
     </div>
     <div className="committer">
-      <span>{moment(date).format('MMM D, YYYY')}</span>
+      <span>{moment(date).format('MMM D, YYYY h:mm a')}</span>
       <span>{name}</span>
     </div>
     <div className="message">
