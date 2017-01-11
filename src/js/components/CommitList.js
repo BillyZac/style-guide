@@ -21,8 +21,9 @@ const CommitList = ({list = []}) => {
     return (
       <div className="commit-list">
         <h2>Latest changes</h2>
-        {list.slice(0, 5).map(item => (
+        {list.slice(0, 5).map((item, index) => (
           <Commit
+            key={index}
             image_url={item.author.avatar_url}
             name={item.commit.committer.name}
             date={item.commit.committer.date}
