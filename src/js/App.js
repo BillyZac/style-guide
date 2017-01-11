@@ -1,6 +1,7 @@
 import React from 'react'
 import Component from './components/Component.js'
 import CommitList from './components/CommitList.js'
+import ColorSwatch from './components/ColorSwatch.js'
 import Header from 'whippersnapper/build/Header'
 const Footer = require('whippersnapper/build/Footer.js')
 import fetch from 'isomorphic-fetch'
@@ -22,13 +23,6 @@ const description =
   (<div className="intro">
     <p>Demonstrating the Whippersnapper React component library with the zzzss style library.</p>
   </div>)
-
-const ColorSwatch = ({colorName, colorClass}) => (
-  <div className="color-swatch">
-    <div className={`swatch ${colorClass}`}></div>
-    <p className="color-name">{colorName}</p>
-  </div>
-)
 
 class App extends React.Component {
   constructor(props) {
@@ -54,7 +48,7 @@ class App extends React.Component {
           onLogoClick={() => console.log('clik!')}
         />
         {description}
-        <ColorSwatch colorName="brand-colour-red" colorClass="brand-colour-red" />
+        <ColorSwatch colorClass="brand-colour-red" />
         {main}
         <CommitList list={ this.state.commitList }/>
         <Footer appVersion="1.0" />
