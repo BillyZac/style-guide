@@ -9,11 +9,7 @@ import fetch from 'isomorphic-fetch'
 const GIT_COMMIT_URL = 'https://api.github.com/repos/buildit/zzzss/commits'
 
 import components from './data/components.js'
-
-const colors = [
-  'brand-colour-red',
-  'brand-colour-green'
-]
+import colors from './data/colors.js'
 
 const main = (
   <main>

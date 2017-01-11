@@ -95,8 +95,31 @@ body {
     width: 150px;
     height: 150px;
     background: gray;
+
+    &.brand-colour-black { background: $brand-colour-black; }
+    &.brand-colour-yellow { background: $brand-colour-yellow; }
+    &.brand-colour-white { background: $brand-colour-white; }
+    &.brand-colour-blue { background: $brand-colour-blue; }
     &.brand-colour-red { background: $brand-colour-red; }
     &.brand-colour-green { background: $brand-colour-green; }
+    &.brand-primary-colour { background: $brand-primary-colour; }
+    &.brand-secondary-colour { background: $brand-secondary-colour; }
+    &.brand-colour-header { background: $brand-colour-header; }
+    &.danger-colour {}
+
+    &.button-info-colour { background: $button-info-colour; }
+    &.button-success-colour { background: $button-success-colour; }
+    &.button-danger-colour { background: $button-danger-colour; }
+    &.button-warning-colour { background: $button-warning-colour; }
+    &.nav-list-item-primary-colour { background: $nav-list-item-primary-colour; }
+    &.nav-list-item-secondary-colour { background: $nav-list-item-secondary-colour; }
+    &.nav-list-item-hover-colour { background: $nav-list-item-hover-colour; }
+    &.nav-list-item-active-colour { background: $nav-list-item-active-colour; }
+    &.nav-toggle-icon-colour { background: $nav-toggle-icon-colour; }
+
+    &.gray { background: $gray; }
+    &.light-gray { background: $light-gray; }
+
   }
   .color-name {
     margin: 5px 0 0 0;
@@ -105,6 +128,7 @@ body {
     background: #444;
     font-family: monospace;
     padding: 8px;
+    min-height: 2rem;
   }
   .color-name:before {
     content: "$"
@@ -114,8 +138,9 @@ body {
 .colors {
   .color-swatches {
     display: flex;
+    flex-wrap: wrap;
     > * {
-      margin-right: 10px;
+      margin: 0 5px 5px 0;
     }
   }
 }
