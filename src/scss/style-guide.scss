@@ -96,6 +96,7 @@ body {
     height: 150px;
     background: gray;
     &.brand-colour-red { background: $brand-colour-red; }
+    &.brand-colour-green { background: $brand-colour-green; }
   }
   .color-name {
     margin: 5px 0 0 0;
