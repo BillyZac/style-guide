@@ -4,9 +4,9 @@ podTemplate(label: 'style-guide',
         containers: [
                 containerTemplate(name: 'nodejs-builder', image: 'builditdigital/node-builder', ttyEnabled: true, command: 'cat', privileged: true),
                 containerTemplate(name: 'docker', image: 'docker:1.11', ttyEnabled: true, command: 'cat'),
+                containerTemplate(name: 'aws', image: 'cgswong/aws', ttyEnabled: true, command: 'cat'),
                 containerTemplate(name: 'kubectl', image: 'builditdigital/kube-utils', ttyEnabled: true, command: 'cat')],
         volumes: [
-                hostPathVolume(mountPath: '/var/projects', hostPath: '/Users/romansafronov/dev/projects'),
                 hostPathVolume(mountPath: '/var/cache', hostPath: '/tmp'),
                 hostPathVolume(mountPath: '/var/run/docker.sock', hostPath: '/var/run/docker.sock')]) {
   node('style-guide') {
@@ -23,18 +23,19 @@ podTemplate(label: 'style-guide',
 
         buildNumber = env.BUILD_NUMBER
         appName = "style-guide"
-        cloud = "local"
+        cloud = "ec2"
         env = "staging"
         slackChannel = "style-guide"
         gitUrl = "https://github.com/BillyZac/style-guide.git"
-        dockerRegistry = "builditdigital"
+        region = 'us-east-1'
+        dockerRegistry = "006393696278.dkr.ecr.${region}.amazonaws.com"
         image = "$dockerRegistry/$appName"
         deployment = "style-guide-staging"
       }
       container('nodejs-builder') {
         stage('Checkout') {
           checkout scm
-          //git(url: '/var/projects/style-guide', branch: 'k8s')
+          //git(url: 'https://github.com/electroma/style-guide.git', branch: 'k8s')
 
           // global for exception handling
           shortCommitHash = gitInst.getShortCommit()
@@ -63,11 +64,19 @@ podTemplate(label: 'style-guide',
         }
 
       }
+      container('aws') {
+        loginCmd = sh script: "aws ecr get-login --region=${region}", returnStdout: true
+      }
+
       container('docker') {
         stage('Docker Image Build') {
           tag = "${version}-${shortCommitHash}-${buildNumber}"
           // Docker pipeline plugin does not work with kubernetes (see https://issues.jenkins-ci.org/browse/JENKINS-39664)
           sh "docker build -t $image:$tag ."
+        }
+        stage('Docker Push') {
+          sh loginCmd
+          sh "docker push $image:$tag"
         }
       }
 
@@ -91,6 +100,7 @@ podTemplate(label: 'style-guide',
       container('docker') {
         stage('Promote Build to latest') {
           sh "docker tag $image:$tag $image:latest"
+          sh "docker push $image:latest"
           if (sendNotifications) slackInst.notify("Deployed to ${env}", "Commit <${gitUrl}/commits/${shortCommitHash}|${shortCommitHash}> has been deployed to ${env}\n\n${commitMessage}", "good", "http://i3.kym-cdn.com/entries/icons/square/000/002/230/42.png", slackChannel)
         }
       }
