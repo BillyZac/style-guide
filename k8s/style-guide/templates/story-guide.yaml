@@ -48,7 +48,7 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: {{ template "fullname" . }}
+  name: {{ template "fullname" . }}-int
 spec:
   rules:
   - host: {{ .Values.service.hostName | quote }}
@@ -64,8 +64,7 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  namespace: public
-  name: {{ template "fullname" . }}
+  name: {{ template "fullname" . }}-pub
 spec:
   rules:
   - host: {{ .Values.service.publicHostName | quote }}
