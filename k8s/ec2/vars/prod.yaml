@@ -1,0 +1,8 @@
+image:
+  repository: 006393696278.dkr.ecr.us-east-1.amazonaws.com/style-guide
+  pullPolicy: Always
+service:
+  hostName: style-guide.prod.riglet
+  publicHostName: style-guide.apps.k8s.riglet.io
+
+

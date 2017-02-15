@@ -1,0 +1,5 @@
+image:
+  pullPolicy: IfNotPresent
+service:
+  hostName: style-guide-prod.kube.local
+
