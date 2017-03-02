@@ -21,13 +21,13 @@ const CommitList = ({list = []}) => {
     return (
       <div className="commit-list">
         <h2>Latest changes</h2>
-        {list.slice(0, 5).map((item, index) => (
+        {list.slice(0, 5).map((item ={}, index) => (
           <Commit
             key={index}
-            image_url={item.author.avatar_url}
-            name={item.commit.committer.name}
-            date={item.commit.committer.date}
-            message={item.commit.message}
+            image_url={item.author ? item.author.avatar_url : ''}
+            name={item.commit ? item.commit.committer.name : ''}
+            date={item.commit ? item.commit.committer.date : ''}
+            message={item.commit ? item.commit.message : ''}
             commit_url={item.html_url}
           />
         ))}
